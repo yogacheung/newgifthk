@@ -1,0 +1,165 @@
+{"frames": [
+
+{
+	"filename": "_0000s_0000s_0000_sound",
+	"frame": {"x":2,"y":2,"w":62,"h":45},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":62,"h":45},
+	"sourceSize": {"w":62,"h":45},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "_0000s_0000s_0001_mute",
+	"frame": {"x":66,"y":2,"w":55,"h":42},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":55,"h":42},
+	"sourceSize": {"w":55,"h":42},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "_0000s_0001_arrow",
+	"frame": {"x":123,"y":2,"w":90,"h":80},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":90,"h":80},
+	"sourceSize": {"w":90,"h":80},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "_0000s_0002_Use-your-mouse-to-interact!",
+	"frame": {"x":215,"y":2,"w":500,"h":131},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":500,"h":131},
+	"sourceSize": {"w":500,"h":131},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "_0000s_0002s_0001_Vector-Smart-Object",
+	"frame": {"x":717,"y":2,"w":625,"h":948},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":625,"h":948},
+	"sourceSize": {"w":625,"h":948},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "_0000s_0003_Vector-Smart-Object",
+	"frame": {"x":1344,"y":2,"w":238,"h":220},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":238,"h":220},
+	"sourceSize": {"w":238,"h":220},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "_0000s_0003s_0000_Vector-Smart-Object",
+	"frame": {"x":1584,"y":2,"w":319,"h":697},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":319,"h":697},
+	"sourceSize": {"w":319,"h":697},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "_0000s_0003s_0001_Vector-Smart-Object",
+	"frame": {"x":1905,"y":2,"w":123,"h":173},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":123,"h":173},
+	"sourceSize": {"w":123,"h":173},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "_0000s_0003s_0002_Vector-Smart-Object",
+	"frame": {"x":2,"y":952,"w":88,"h":450},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":88,"h":450},
+	"sourceSize": {"w":88,"h":450},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "_0000s_0003s_0003_Vector-Smart-Object",
+	"frame": {"x":92,"y":952,"w":109,"h":215},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":109,"h":215},
+	"sourceSize": {"w":109,"h":215},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "_0000s_0003s_0004_Vector-Smart-Object",
+	"frame": {"x":203,"y":952,"w":268,"h":839},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":268,"h":839},
+	"sourceSize": {"w":268,"h":839},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "_0000s_0003s_0005_Vector-Smart-Object",
+	"frame": {"x":473,"y":952,"w":113,"h":274},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":113,"h":274},
+	"sourceSize": {"w":113,"h":274},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "_0000s_0003s_0006_Vector-Smart-Object",
+	"frame": {"x":588,"y":952,"w":185,"h":315},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":185,"h":315},
+	"sourceSize": {"w":185,"h":315},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "_0000s_0003s_0007_Vector-Smart-Object",
+	"frame": {"x":775,"y":952,"w":303,"h":678},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":303,"h":678},
+	"sourceSize": {"w":303,"h":678},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "_0000s_0003s_0008_Vector-Smart-Object",
+	"frame": {"x":1080,"y":952,"w":261,"h":437},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":261,"h":437},
+	"sourceSize": {"w":261,"h":437},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "_0000s_0003s_0009_Vector-Smart-Object",
+	"frame": {"x":1343,"y":952,"w":131,"h":686},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":131,"h":686},
+	"sourceSize": {"w":131,"h":686},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "_0000s_0003s_0010_Vector-Smart-Object",
+	"frame": {"x":1476,"y":952,"w":290,"h":746},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":290,"h":746},
+	"sourceSize": {"w":290,"h":746},
+	"pivot": {"x":0.5,"y":0.5}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "hres_ta0.png",
+	"format": "RGBA8888",
+	"size": {"w":2048,"h":2048},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:05efb408c8b6db10cc7c3c20b1c681f9:cce144cd098066157b545a3bee1f0f46:3159ac25b86533d3a54fec08b1f9be04$"
+}
+}

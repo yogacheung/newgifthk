@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+
+<card>
+
+	<principal>Good</principal>
+
+	<message>nice
+
+	testing
+
+	test 
+</message>
+
+	<logo>https://my.ekarda.com/img/sample-logo.gif</logo>
+
+	<site>newgift.com.hk</site>
+
+	<url>newgift.com.hk</url>
+
+	<music>../../music/Christmas_Waltz/soundtrack</music>#theme2/soundtrack... /home/web/cards.ekarda.com/music/
+
+	<color_theme>0</color_theme>
+
+</card>
+

@@ -1,0 +1,39 @@
+{"frames": [
+
+{
+	"filename": "_0000s_0003s_0018_Vector-Smart-Object",
+	"frame": {"x":2,"y":2,"w":637,"h":570},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":637,"h":570},
+	"sourceSize": {"w":637,"h":570},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "_0000s_0004_Vector-Smart-Object",
+	"frame": {"x":2,"y":574,"w":1500,"h":360},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1500,"h":360},
+	"sourceSize": {"w":1500,"h":360},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "_0001s_0000_Rectangle-2-copy",
+	"frame": {"x":2,"y":936,"w":1920,"h":1080},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1920,"h":1080},
+	"sourceSize": {"w":1920,"h":1080},
+	"pivot": {"x":0.5,"y":0.5}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "hres_ta2.png",
+	"format": "RGBA8888",
+	"size": {"w":2048,"h":2048},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:05efb408c8b6db10cc7c3c20b1c681f9:cce144cd098066157b545a3bee1f0f46:3159ac25b86533d3a54fec08b1f9be04$"
+}
+}

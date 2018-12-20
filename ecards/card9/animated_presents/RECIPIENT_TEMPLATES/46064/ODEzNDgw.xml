@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+||| Instructions Card Christmas |||
+
+MESSAGE
+If you want to override the message, just type what you want and between <your_message> and </ your_message>. Just press enter to give a line break.
+
+LOGO
+Paste the logo you want to use in the "your_card", and enter the file name and between <your_logo> and </ your_logo>. Remember to enter the file extension, such as. Png or. Jpg.
+Example: logo_yourcompany.png
+
+SITE
+Enter the company's website between <your_site> and <your_site> and do not put "http://" because it gets ugly.
+Example: yourcompany.com
+
+URL
+You put the address of the site, or landing page between <your_url> and </ your_url>. In this field you put "http://", and can even change the url.
+Example: http://www.yourcompany.com/contact/index.html
+
+-->
+
+<card>
+
+	<principal>Merry Christmas</principal>
+
+	<message>BoxColorful
+
+	Time for enjoy
+
+	Having good days 
+</message>
+
+	<logo>https://my.ekarda.com/img/sample-logo.gif</logo>
+
+	<site>newgift.com.hk</site>
+
+	<url>newgift.com.hk</url>
+
+	<music>../../music/Christmas_is_Coming/soundtrack</music>
+
+	<color_theme>0</color_theme>
+
+</card>
+

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<card>
+    <!-- letter config -->
+    <letter>
+        <principal> </principal>        
+
+        <message>nice
+
+testing
+
+test</message>
+
+        <logo>https://my.ekarda.com/img/sample-logo.gif</logo>
+
+        <!-- width/height of rectangle with logo-->
+     <logo_rectWidth>300</logo_rectWidth>
+        <logo_rectHeight>300</logo_rectHeight>
+
+       <!-- position(x/y) of this rectangle -->
+        <logo_rectX>1568</logo_rectX>
+        <logo_rectY>846</logo_rectY>
+
+        <!-- logo alignment in rectangle box -->
+        <!-- logo horizontal allignment in rectangle box, can be "left", "right", "center" -->
+        <logo_allign>center</logo_allign>
+        <!-- logo horizontal allignment in rectangle box, can be "top", "center", "bottom" --> 
+        <logo_vallign>center</logo_vallign>
+        
+        <!-- can be "true", "false", if true logo rectable will show -->
+        <logo_debug>false</logo_debug>
+
+        <site>newgift.com.hk</site>
+
+        <url>newgift.com.hk</url>
+
+        <!-- greetings text: like "Happy Birthday" -->
+        <greatings>
+            <text>aloha</text>
+            <!-- size in pixels -->
+            <size>80</size> 
+
+            <!-- x position -->
+            <x>974</x>
+
+            <!-- y position -->
+            <y>80</y> 
+
+            <!-- can be "true", "false", if true text will show -->
+            <debug>false</debug>
+        </greatings>
+
+        <!-- music theme for e-card 
+        path to file without filename-->
+        <musicTheme>../music/holiday/Holiday_Beauty/soundtrack</musicTheme>
+    </letter>
+    
+    <!-- font config -->
+   <font>
+        <!-- font config for principal message -->
+        <principal>
+            <family>latoregular</family>
+
+            <!-- font size in pixels -->
+            <size>10</size>
+            <!-- when size is auto sizemin/sizemax is minimum and maximum font size -->
+            <sizemin>8</sizemin>
+            <sizemax>50</sizemax>
+            <align>center</align> <!-- text allign, can be "left", "right" "center" -->
+
+            <color>#ffffff</color> 
+
+            <x>700</x>
+            <y>218</y>
+        </principal>
+
+        <!-- font settings of message -->
+        <message>
+            <family>latoregular</family>
+
+            <!-- font size in pixels -->
+            <size>24</size>
+            <!-- when size is auto sizemin/sizemax is minimum and maximum font size -->
+            <sizemin>8</sizemin>
+            <sizemax>30</sizemax>
+            <align>center</align>
+            <color>#ffffff</color>
+
+            <x>750</x>
+            <y>200</y>
+        </message>
+    </font>
+</card>
+

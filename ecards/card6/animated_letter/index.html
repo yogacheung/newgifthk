@@ -1,0 +1,298 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<!-- Disable zoom -->	
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+	<meta charset="utf-8">
+	<meta http-equiv="pragma" content="no-cache"/>
+	
+	<title></title>
+
+        <script src="./platform.js"></script>
+	<!-- 3rd parties-->
+	<script src="./js/3rd/pixi.js"></script>
+	<script src="./js/3rd/soundjs_0_5_2.js"></script>
+         
+        <!--combine_js_from-->
+	<!-- auxiliary function-->
+	<script src="./js/common.js"></script>
+	<script src="./js/common_linked_list.js"></script>
+	<script src="./js/common_shiver_effect.js"></script>
+	<script src="./js/common_fade_effect.js"></script>
+	<script src="./js/common_loader.js"></script>
+	<script src="./js/common_soundmanager.js"></script>
+	<script src="./js/common_xmlsettings.js"></script>
+    
+        <!-- particles -->
+	<script src="./js/snow_particles.js"></script>
+
+        <!-- objects -->
+	<script src="./js/obj_letterbox.js"></script>
+	<script src="./js/obj_letter.js"></script>
+
+	<!-- stages -->
+	<script src="./js/game.js"></script>
+	<script src="./js/loading_stage.js"></script>
+	<script src="./js/main_stage.js"></script>
+
+        <!-- gui elements and effects -->
+	<script src="./js/gui_stage_fade_effect.js"></script>
+	<script src="./js/gui_check_button.js"></script>
+
+        <!--combine_js_to-->
+        <link rel="stylesheet" href="./img/fonts/cutiveregular/stylesheet.css" type="text/css" charset="utf-8" />
+        <link rel="stylesheet" href="./img/fonts/stardosstencil/stylesheet.css" type="text/css" charset="utf-8" />
+
+	<style>
+                
+                * {
+                    /* solution from here: http://stackoverflow.com/questions/5210481/disable-orange-outline-highlight-on-focus */
+                    -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important; 
+                    -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important; 
+                    outline: none !important;
+                    line-height:50%;
+                }
+
+		html{
+			height: 100%;
+		    }
+			
+		body {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			background-position: center bottom;
+			background-repeat: no-repeat;
+			background-attachment:fixed;
+			background-color: #ffffff;
+		}
+		
+		canvas {
+			margin:0 auto;
+		
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-khtml-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			outline: none;
+
+		}
+		
+		/* container for wrong orientation */
+		.div_wrong_orientation {
+                    display:none;
+                    width:100%;
+                    height:100%;
+                    text-align: center;
+		}
+		
+		/* used to store repeatable background */
+		.div_repeatable_bg {
+                    display:none;
+                    position:fixed;
+                    left:0px;
+                    top:0px;
+                    width:100%;
+                    height:400px;
+                    /*background-position: center bottom;*/
+                    background: url(./html/bg.jpg) repeat-x;
+                    background-size: contain;
+                    z-index:-1;
+		}
+
+		/* used for preload fonts */
+		.div_preloadfonts {
+                    font-size:50px;
+                    text-align: center;
+                    font-weight: normal;
+                    font-style: normal;
+                    position:fixed;
+                    left:-1000px;
+                    top:-1000px;
+		}
+
+		img {
+			border: 0px;
+		}
+
+	</style>
+	
+	<script>
+	var renderer = null;
+        var htmlBackground = undefined;
+        var htmlLogoImg = undefined; // store logo loaded from another domain, main idea that we create orginary image element and then transform it to pixi texture
+
+
+	function SetupScreenSizeFor(elemId)
+	{
+            // setup HTML layers
+            document.getElementById(elemId).style.width = Screen.OptionalScrW+'px';
+            document.getElementById(elemId).style.heigh = Screen.OptionalScrH+'px';
+	}
+	
+	function ShowGame()
+	{	
+            document.getElementById("div_wrong_orientation").style.display = "none";
+            document.getElementById("maincanvas").style.display = "block";
+	}
+	
+	function ShowWrongOrientation()
+	{	
+            document.getElementById("div_wrong_orientation").style.display = "block";
+            document.getElementById("maincanvas").style.display = "none";
+	}
+	
+	function doOnOrientationChange()
+	{	
+            switch(window.orientation) 
+            {  
+                // Landscape
+                case -90:
+                case 90:
+                    if(Screen.VirtualScrIsPortrait == false)
+                        ShowGame();
+                    else
+                        ShowWrongOrientation();
+
+                    break; 
+                default:
+                    // Portrait
+                    if(Screen.VirtualScrIsPortrait)
+                        ShowGame();
+                    else
+                        ShowWrongOrientation();
+                    break; 
+            }
+	}
+	
+	// some settings for mobile (ipad/iphone/android) device
+	function SetupForMobile()
+	{
+            // for android, ipad, iphone
+            if(DEVICE.isMobile())
+            {
+                if(document.documentElement.scrollHeight < window.outerHeight/window.devicePixelRatio)
+                        document.documentElement.style.height=(window.outerHeight/window.devicePixelRatio)+'px';
+                setTimeout(window.scrollTo(1,1), 50);
+        
+                // orientation change listner
+                window.addEventListener('orientationchange', doOnOrientationChange);
+                doOnOrientationChange();
+            }
+	}
+ 
+	function Start()
+	{	
+            // get rid from url, from this: http://stackoverflow.com/questions/979975/how-to-get-the-value-from-url-parameter
+            GAME.rid =  location.search.split('rid=')[1];
+            var settingsPath = "./XML_TEMPLATE/card.xml";
+            if(GAME.rid !== undefined)
+            {
+                console.log("Recipiend id: " + GAME.rid);
+                settingsPath = "./RECIPIENT_TEMPLATES/"+GAME.rid+".xml";
+            }
+
+            // calculate height of html backgrond 
+            htmlBackground = document.getElementById("div_repeatable_bg");
+            updateHtmlBackground();
+
+            // other game stuff
+            ShowGame();
+
+            SetupForMobile();
+
+            // create and setup render,  we use only canvas render
+            renderer = new PIXI.CanvasRenderer( Screen.VirtualScrW, 
+                                                Screen.VirtualScrH, 
+                                                document.getElementById("maincanvas"),
+                                                true);
+            renderer.clearBeforeRender = true;
+
+            renderer.view.style.width = Screen.OptionalScrW + 'px';
+            renderer.view.style.height = Screen.OptionalScrH + 'px';
+
+            GAME.xmlSettings = new XMLSettings(); 
+            console.log("start load settings xml file");
+
+            GAME.xmlSettings.startLoad(settingsPath, function(){
+                GAME.xmlSettings.initConfig(); 
+                console.log("settings xml file was loaded");
+
+                htmlLogoImg = new Image();            
+                htmlLogoImg.onload = function(){
+                    console.log("logo image loaded");
+                    GAME.Init();
+                    // setup main function		
+                    requestAnimFrame(main);	
+                };
+                htmlLogoImg.src = GAME.xmlSettings.letter.logo;
+            });
+		
+	}
+        
+        function showHtmlBackground()
+        {
+            htmlBackground.style.display = "block";
+        }
+
+        // update html background 
+        function updateHtmlBackground()
+        {
+            var h = Screen.OptionalScrH * 0.58; // 58.3% 
+            htmlBackground.style.height = h+"px";
+            /*htmlBackground.style.height = "300px";*/
+        }
+            
+        // main loop
+        function main()
+        {   
+            GAME.Update();
+            renderer.render(GAME.currentStage.stage);	
+            requestAnimFrame(main);
+        }
+                    
+            // add onResize window event
+        window.onresize = function(event)
+        {
+            if(renderer == null)
+                    return;
+                                    
+            // Real(device) screen
+            Screen.DeviceScrW = window.innerWidth;	// width of device window
+            Screen.DeviceScrH = window.innerHeight;	// height of device window
+            Screen.Init();
+            
+            renderer.view.style.width = Screen.OptionalScrW + 'px';
+            renderer.view.style.height = Screen.OptionalScrH + 'px';
+
+            // update html background
+            updateHtmlBackground();
+        }
+	
+</script>
+</head>
+<body onload="Start();">
+
+    <!-- div with repeatable background -->
+    <div id="div_repeatable_bg" class="div_repeatable_bg">  
+            &nbsp;
+    </div>
+
+    <!-- main render canvas-->
+    <canvas id="maincanvas" >Sorry, your brouser does not support html5 canvas</canvas>	
+
+
+    <!-- div with wrong orientation banner -->
+    <div id="div_wrong_orientation" class="div_wrong_orientation">  
+            <img src="./html/wrongOrientation.png">
+    </div>
+
+    <!-- precache fonts-->
+    <div id="div_preloadfonts" class="div_preloadfonts">  
+        <font face="stardos_stencilbold" style="font-family:'stardos_stencilbold'"> Hello world</font>
+        <font face="cutiveregular" style="font-family:'cutiveregular'"> Hello world</font>
+    </div>
+</body>
+</html>
